@@ -1,10 +1,13 @@
 package com.fis.springlearn.dao;
 
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
+import com.fis.springlearn.SpringLearnApplication;
+@Component
 public class EmployeeDao {
-	private static final Logger LOGGER=(Logger) LoggerFactory.getLogger(EmployeeDao.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeDao.class);
 	public EmployeeDao()
 	{
 		LOGGER.debug("Inside Employee Dao");

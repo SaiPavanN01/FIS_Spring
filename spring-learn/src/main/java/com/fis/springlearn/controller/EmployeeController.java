@@ -1,23 +1,25 @@
 package com.fis.springlearn.controller;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.message.Message;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-import com.fis.springlearn.dao.EmployeeDao;
 import com.fis.springlearn.service.EmployeeService;
-
+@Component
+@Configuration
+@ComponentScan("com.fis.springlearn")
 public class EmployeeController {
-	private static final Logger LOGGER=(Logger) LoggerFactory.getLogger(EmployeeDao.class);
-	
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeController.class);
 	private EmployeeService employeeService;
 	public EmployeeController()
 	{
 		LOGGER.debug("Inside Employee Controller");
 	}
-	public void setEmployeeeService(EmployeeService employeeService) {
-		this.employeeService=employeeService;
+	@Autowired
+	public void setEmployeeService(EmployeeService employeeService) {
+		this.employeeService = employeeService;
 	}
-
-
 }
