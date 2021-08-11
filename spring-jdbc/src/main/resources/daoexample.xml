@@ -25,8 +25,8 @@
 		</property>
 	</bean>
 
-	<bean id="productDao"
-		class="com.fis.springjdbc.product.ProductDAOImpl">
+	<bean id="employeeDao"
+		class="com.fis.springjdbc.employee.EmployeeDAOImpl">
 		<property name="dataSource" ref="dataSourceHikari" />
 	</bean>
 
